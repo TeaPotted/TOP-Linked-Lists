@@ -1,0 +1,27 @@
+{
+  "name": "top-linked-lists",
+  "version": "1.0.0",
+  "description": "The Odin Project's Linked Lists project",
+  "main": "test.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TeaPotted/TOP-Linked-Lists.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/TeaPotted/TOP-Linked-Lists/issues"
+  },
+  "homepage": "https://github.com/TeaPotted/TOP-Linked-Lists#readme",
+  "dependencies": {
+    "@babel/preset-env": "^8.0.2"
+  },
+  "devDependencies": {
+    "jest": "^30.4.2"
+  }
+}
