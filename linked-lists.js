@@ -9,4 +9,13 @@ class Node {
     this.value = value;
     this.nextNode = nextNode;
   }
+
+  // create setter and getter functions for nextNode property
+  set nextNode(val) {
+    this._nextNode = val;
+  }
+
+  get nextNode() {
+    return this._nextNode;
+  }
 }
