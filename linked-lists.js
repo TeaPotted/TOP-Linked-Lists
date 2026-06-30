@@ -1,14 +1,14 @@
 // LinkedList class which will represent the full list
 class LinkedList {
-  head = null; // initially set the head to null
+  #head = null; // initially set the head to null
 
   // create a function append(value), that adds a new node containing [ value ] to the end of the list
   append(value) {
     // if head is empty, create a new Node using [ value ] then set head to the newly created Node
-    if (this.head === null) this.head = new Node(value);
+    if (this.#head === null) this.#head = new Node(value);
     // else, get the last node in the list, then set it's .nextNode value to a new Node using [ value ] parameter
     else {
-      let current = this.head; // get the head, this will be the current node we start from
+      let current = this.#head; // get the head, this will be the current node we start from
 
       // while current.nextNode is not null, set current to it's next node
       while (current.nextNode !== null) {
@@ -21,14 +21,14 @@ class LinkedList {
 
   // create a function prepend(value) adds a new node containing [ value ] to the start of the list.
   prepend(value) {
-    // set head to a new Node using value and this.head as it's .nextNode
-    this.head = new Node(value, this.head)
+    // set head to a new Node using value and this.#head as it's .nextNode
+    this.#head = new Node(value, this.#head)
   }
 
   // a function size(), returns the total number of nodes in the list
   size() { 
     let i = 0;
-    let current = this.head;
+    let current = this.#head;
     // while current is not null, increment i and assign current to it's next node
     while (current !== null) {
       i++
