@@ -18,6 +18,12 @@ class LinkedList {
       current.nextNode = new Node(value);
     }
   }
+
+  // create a function prepend(value) adds a new node containing [ value ] to the start of the list.
+  prepend(value) {
+    // set head to a new Node using value and this.head as it's .nextNode
+    this.head = new Node(value, this.head)
+  }
 }
 
 // Node class, containing a value property and a nextNode property, set both as null by default
