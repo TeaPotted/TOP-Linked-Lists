@@ -36,6 +36,11 @@ class LinkedList {
     }
     return i
   }
+
+  // function head(), should return the value of the first node in the list. If the list is empty, it should return undefined
+  head() {
+    return this.#head ? this.#head.value : undefined
+  }
 }
 
 // Node class, containing a value property and a nextNode property, set both as null by default
