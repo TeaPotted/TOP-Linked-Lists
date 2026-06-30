@@ -24,6 +24,18 @@ class LinkedList {
     // set head to a new Node using value and this.head as it's .nextNode
     this.head = new Node(value, this.head)
   }
+
+  // a function size(), returns the total number of nodes in the list
+  size() { 
+    let i = 0;
+    let current = this.head;
+    // while current is not null, increment i and assign current to it's next node
+    while (current !== null) {
+      i++
+      current = current.nextNode
+    }
+    return i
+  }
 }
 
 // Node class, containing a value property and a nextNode property, set both as null by default
