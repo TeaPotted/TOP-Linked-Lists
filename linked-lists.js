@@ -41,6 +41,18 @@ class LinkedList {
   head() {
     return this.#head ? this.#head.value : undefined
   }
+
+  // function tail() should return the value of the final node in the list.  If the list is empty, it should return undefined
+  tail() {
+    let current = this.#head;
+    if (current === null) return undefined;
+    
+    // while current has a .nextNode value, assign current to it's .nextNode value. until current does'nt have a next node
+    while (current.nextNode) {
+      current = current.nextNode;
+    }
+    return current;
+  }
 }
 
 // Node class, containing a value property and a nextNode property, set both as null by default
