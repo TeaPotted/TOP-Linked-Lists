@@ -68,6 +68,16 @@ class LinkedList {
       }
     }
   }
+
+  // function pop() should remove the head node from the list and return its value. If it’s used on an empty list, it should just return undefined.
+  pop() {
+    if (!this.#head) return undefined; // if list is empty, return undefined
+    
+    // get the head node using .at(), then assign this.#head to the second node in the list
+    const headNode = this.at(0);
+    this.#head = this.at(1);
+    return headNode.value;
+  }
 }
 
 // Node class, containing a value property and a nextNode property, set both as null by default
