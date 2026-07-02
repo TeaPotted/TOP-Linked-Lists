@@ -91,6 +91,22 @@ class LinkedList {
 
     return false; // return false if all node's don't have a matching value
   }
+
+  // findIndex(value) returns the index of the node containing the given value
+  // if value is not in list, return -1.
+  // if more than one node has a value that matches the given value, return the index of the first node that matches
+  findIndex(value) {
+    let current = this.#head;
+    let i = 0; // start counting from zero
+    while (current !== null) {
+      // if current.value matches value, return i. else, increment i and move on to the next node
+      if (current.value === value) return i;
+      i++;
+      current = current.nextNode;
+    }
+
+    return -1; // if there is not matching value in list, return -1
+  }
 }
 
 // Node class, containing a value property and a nextNode property, set both as null by default
