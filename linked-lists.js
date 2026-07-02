@@ -107,6 +107,24 @@ class LinkedList {
 
     return -1; // if there is not matching value in list, return -1
   }
+
+  // function toString() represents your LinkedList objects as strings, so you can print them out and preview them in the console
+  // if list is empty, return an empty string
+  // The format should be: ( value ) -> ( value ) -> ( value ) -> null
+  toString() {
+    if (this.#head === null) return "";
+
+    let current = this.#head;
+    let result = "";
+    // loop over each node in list, adding each node's value to result and moving onto the next node in list
+    while (current) {
+      result += `( ${current.value} ) -> `;
+      current = current.nextNode;
+    }
+    // when we reached the end of the list add null to result and return result
+    result += "null";
+    return result;
+  }
 }
 
 // Node class, containing a value property and a nextNode property, set both as null by default
