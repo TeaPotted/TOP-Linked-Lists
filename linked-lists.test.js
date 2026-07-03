@@ -36,9 +36,28 @@ test("LinkedList.at(index) returns the value of the node at the given index", ()
   l.append("orange");
   expect(l.at(0)).toBe("apple");
   expect(l.at(1)).toBe("banana");
-  expect(l.at(2)).toBe("orange")
+  expect(l.at(2)).toBe("orange");
 });
 
 test("LinkedList.at(index) returns undefined if there is no node at the given index", () => {
   expect(new LinkedList().at(0)).toBe(undefined);
-})
+});
+
+test("LinkedList.pop() removes the head node from the list and returns it's value", () => {
+  const l = new LinkedList();
+  l.append("apple");
+  l.append("banana");
+  expect(l.pop()).toBe("apple");
+});
+
+test("LinkedList.pop() assigns the second node in list as the head", () => {
+  const l = new LinkedList();
+  l.append("apple");
+  l.append("banana");
+  l.pop();
+  expect(l.head()).toBe("banana");
+});
+
+test("LinkedList.pop() returns undefined on an empty list", () => {
+  expect(new LinkedList().pop()).toBe(undefined);
+});
