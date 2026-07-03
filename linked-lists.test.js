@@ -62,17 +62,33 @@ test("LinkedList.pop() returns undefined on an empty list", () => {
   expect(new LinkedList().pop()).toBe(undefined);
 });
 
-test("LinkedList.contains(value) returns true if the passed in value is in the list", () =>{
+test("LinkedList.contains(value) returns true if the passed in value is in the list", () => {
   const l = new LinkedList();
   l.append("apple");
   l.append("banana");
   expect(l.contains("apple")).toBe(true);
-  expect(l.contains("banana")).toBe(true)
-})
+  expect(l.contains("banana")).toBe(true);
+});
 
-test("LinkedList.contains(value) returns false if the passed in value is not in the list", () =>{
+test("LinkedList.contains(value) returns false if the passed in value is not in the list", () => {
   const l = new LinkedList();
   l.append("apple");
   l.append("banana");
   expect(l.contains("coconut")).toBe(false);
-})
+});
+
+test("LinkedList.findIndex(value) returns the index of the node containing the given value", () => {
+  const l = new LinkedList();
+  l.append("apple");
+  l.append("banana");
+  l.append("apple");
+  expect(l.findIndex("apple")).toBe(0);
+  expect(l.findIndex("banana")).toBe(1);
+});
+
+test("LinkedList.findIndex(value) returns -1 if value can't be found in the list", () => {
+  const l = new LinkedList();
+  l.append("apple");
+  l.append("banana");
+  expect(l.findIndex("coconut")).toBe(-1);
+});
