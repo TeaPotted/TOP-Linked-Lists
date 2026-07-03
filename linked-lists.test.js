@@ -28,3 +28,17 @@ test("LinkedList.tail() returns the value of the final node in the list", () => 
 test("LinkedList.tail() returns undefined if list is empty", () => {
   expect(new LinkedList().tail()).toBe(undefined);
 });
+
+test("LinkedList.at(index) returns the value of the node at the given index", () => {
+  const l = new LinkedList();
+  l.append("apple");
+  l.append("banana");
+  l.append("orange");
+  expect(l.at(0)).toBe("apple");
+  expect(l.at(1)).toBe("banana");
+  expect(l.at(2)).toBe("orange")
+});
+
+test("LinkedList.at(index) returns undefined if there is no node at the given index", () => {
+  expect(new LinkedList().at(0)).toBe(undefined);
+})
