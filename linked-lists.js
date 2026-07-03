@@ -60,10 +60,10 @@ class LinkedList {
     if (index > this.size() - 1 || index < 0) return undefined;
     else {
       let current = this.#head;
-      // use a for loop to assign current to the value of it's .nextNode until i === index, then return current
+      // use a for loop to assign current to the value of it's .nextNode until i === index, then return current's value
       for (let i = 0; i <= this.size() - 1; i++) {
         // we will start counting from zero (like in an array)
-        if (i === index) return current;
+        if (i === index) return current.value;
         current = current.nextNode;
       }
     }
@@ -144,4 +144,4 @@ class Node {
   }
 }
 
-export {LinkedList}
+export { LinkedList };
