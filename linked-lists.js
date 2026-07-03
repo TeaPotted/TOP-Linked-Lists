@@ -75,8 +75,8 @@ class LinkedList {
 
     // get the head node using .at(), then assign this.#head to the second node in the list
     const headNode = this.at(0);
-    this.#head = this.at(1);
-    return headNode.value;
+    this.#head = this.#head.nextNode;
+    return headNode;
   }
 
   // function contains(value) returns true if the passed in value is in the list and otherwise returns false
