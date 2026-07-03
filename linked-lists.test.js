@@ -103,3 +103,24 @@ test('LinkedList.toString() returns "( apple ) -> ( banana ) -> null"', () => {
 test("LinkedList.toString() returns an empty string if the list is empty", () => {
   expect(new LinkedList().toString()).toBe("");
 });
+
+test("LinkedList.insertAt(index, ...values) inserts new nodes with the given values at the given index", () => {
+  const l = new LinkedList();
+  l.append("apple");
+  l.append("dragonfruit");
+  l.insertAt(1, "banana", "coconut");
+  expect(l.toString()).toBe(
+    "( apple ) -> ( banana ) -> ( coconut ) -> ( dragonfruit ) -> null",
+  );
+  l.insertAt(0, "watermelon", "guava");
+  expect(l.toString()).toBe(
+    "( watermelon ) -> ( guava ) -> ( apple ) -> ( banana ) -> ( coconut ) -> ( dragonfruit ) -> null",
+  );
+});
+
+test("LinkedList.insertAt(index, ...values) throws a rangeError if the method is called with an index that is out of bounds", () => {
+  const l = new LinkedList();
+  l.append("apple");
+  l.append("dragonfruit");
+  expect(() => l.insertAt(3, "banana", "coconut")).toThrow(RangeError);
+});
