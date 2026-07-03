@@ -143,3 +143,5 @@ class Node {
     return this._nextNode;
   }
 }
+
+export {LinkedList}
