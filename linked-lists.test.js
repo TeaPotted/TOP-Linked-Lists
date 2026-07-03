@@ -92,3 +92,14 @@ test("LinkedList.findIndex(value) returns -1 if value can't be found in the list
   l.append("banana");
   expect(l.findIndex("coconut")).toBe(-1);
 });
+
+test('LinkedList.toString() returns "( apple ) -> ( banana ) -> null"', () => {
+  const l = new LinkedList();
+  l.append("apple");
+  l.append("banana");
+  expect(l.toString()).toBe("( apple ) -> ( banana ) -> null");
+});
+
+test("LinkedList.toString() returns an empty string if the list is empty", () => {
+  expect(new LinkedList().toString()).toBe("");
+});
