@@ -51,7 +51,7 @@ class LinkedList {
     while (current.nextNode) {
       current = current.nextNode;
     }
-    return current;
+    return current.value;
   }
 
   // function at(index) should return the value of the node at the given index. If there’s no node at the given index, it should return undefined
