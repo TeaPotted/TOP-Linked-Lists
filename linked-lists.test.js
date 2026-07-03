@@ -61,3 +61,18 @@ test("LinkedList.pop() assigns the second node in list as the head", () => {
 test("LinkedList.pop() returns undefined on an empty list", () => {
   expect(new LinkedList().pop()).toBe(undefined);
 });
+
+test("LinkedList.contains(value) returns true if the passed in value is in the list", () =>{
+  const l = new LinkedList();
+  l.append("apple");
+  l.append("banana");
+  expect(l.contains("apple")).toBe(true);
+  expect(l.contains("banana")).toBe(true)
+})
+
+test("LinkedList.contains(value) returns false if the passed in value is not in the list", () =>{
+  const l = new LinkedList();
+  l.append("apple");
+  l.append("banana");
+  expect(l.contains("coconut")).toBe(false);
+})
