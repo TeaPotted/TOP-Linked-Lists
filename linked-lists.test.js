@@ -13,3 +13,10 @@ test("LinkedList.head() returns the value of the first node in the list", () => 
   l.append("banana");
   expect(l.head()).toBe("apple");
 });
+
+test("LinkedList.tail() returns the value of the final node in the list", () => {
+  const l = new LinkedList();
+  l.append("apple");
+  l.append("banana");
+  expect(l.tail()).toBe("banana");
+});
