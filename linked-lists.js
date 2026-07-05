@@ -201,6 +201,7 @@ class LinkedList {
         // get the node at index. then assign current.nextNode to the node at the given index's .nextNode value
         let nodeAtIndex = current.nextNode;
         current.nextNode = nodeAtIndex.nextNode;
+        break;
       }
     }
   }
