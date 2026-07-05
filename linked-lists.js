@@ -125,6 +125,54 @@ class LinkedList {
     result += "null";
     return result;
   }
+
+  // function insertAt(index, ...values) should insert new nodes with the given values at the given index
+  insertAt(index, ...values) {
+    switch (true) {
+      // if index is below zero or above the list's size, throw a RangeError
+      case index < 0:
+      case index > this.size(): {
+        throw RangeError("index out of bounds!");
+        break;
+      }
+
+      // if index is 0, add the values to th`e start of the list
+      case index === 0: {
+        // first, prepend the first value to head
+        this.prepend(values[0]);
+        let current = this.#head;
+        let nodeAfterIndex = current.nextNode;
+        // use a loop to create a Node using the rest of the values
+        for (let i = 1; i < values.length; i++) {
+          current.nextNode = new Node(values[i]);
+          current = current.nextNode; // set current to the next node
+        }
+        current.nextNode = nodeAfterIndex; // set the last value (in ...values) node's .nextNode to the node after the given index
+        break;
+      }
+
+      default: {
+        let current = this.#head;
+        let i = 0;
+        let indexNode;
+        // use a loop that increments i and moves on to the next node in list, until i === the index of the node before the given index
+        while (i !== index - 1) {
+          current = current.nextNode;
+          i++;
+        }
+        indexNode = current.nextNode; // keep the node at the given index
+
+        // once we've got the node before the node at index, set it's .nextNode value to be the rest of the values
+        for (let i = 0; i < values.length; i++) {
+          current.nextNode = new Node(values[i]);
+          current = current.nextNode;
+        }
+        // set the final value's (in ...values) .nextNode = the node at the given index we kept before
+        current.nextNode = indexNode;
+        break;
+      }
+    }
+  }
 }
 
 // Node class, containing a value property and a nextNode property, set both as null by default
