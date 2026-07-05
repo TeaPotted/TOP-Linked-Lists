@@ -124,3 +124,23 @@ test("LinkedList.insertAt(index, ...values) throws a rangeError if the method is
   l.append("dragonfruit");
   expect(() => l.insertAt(3, "banana", "coconut")).toThrow(RangeError);
 });
+
+test("LinkedList.removeAt(index) removes the node at the given index", () => {
+  const l = new LinkedList();
+  l.append("apple");
+  l.append("banana");
+  l.append("coconut");
+  l.removeAt(1);
+  expect(l.toString()).toBe("( apple ) -> ( coconut ) -> null");
+  l.removeAt(0);
+  expect(l.toString()).toBe("( coconut ) -> null");
+});
+
+test("LinkedList.removeAt(index) throws a RangeError if the given index is out of bounds", () => {
+  const l = new LinkedList();
+  l.append("apple");
+  l.append("banana");
+  l.append("coconut");
+  expect(() => l.removeAt(-1)).toThrow(RangeError);
+  expect(() => l.removeAt(3)).toThrow(RangeError);
+});
