@@ -1,5 +1,13 @@
 import { LinkedList } from "./linked-lists.js";
 
+test("LinkedList.append(value) adds a new node containing value to the end of the list", () => {
+  const l = new LinkedList();
+  l.append("apple");
+  expect(l.toString()).toBe("( apple ) -> null");
+  l.append("banana");
+  expect(l.toString()).toBe("( apple ) -> ( banana ) -> null");
+});
+
 test("LinkedList.size() returns total number of nodes in the list", () => {
   const l = new LinkedList();
   l.append("apple");
