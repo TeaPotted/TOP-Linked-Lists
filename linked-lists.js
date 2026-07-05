@@ -154,13 +154,13 @@ class LinkedList {
       default: {
         let current = this.#head;
         let i = 0;
-        let indexNode;
+        let nodeAtIndex;
         // use a loop that increments i and moves on to the next node in list, until i === the index of the node before the given index
         while (i !== index - 1) {
           current = current.nextNode;
           i++;
         }
-        indexNode = current.nextNode; // keep the node at the given index
+        nodeAtIndex = current.nextNode; // keep the node at the given index
 
         // once we've got the node before the node at index, set it's .nextNode value to be the rest of the values
         for (let i = 0; i < values.length; i++) {
@@ -168,7 +168,7 @@ class LinkedList {
           current = current.nextNode;
         }
         // set the final value's (in ...values) .nextNode = the node at the given index we kept before
-        current.nextNode = indexNode;
+        current.nextNode = nodeAtIndex;
         break;
       }
     }
