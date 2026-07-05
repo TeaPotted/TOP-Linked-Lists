@@ -8,6 +8,13 @@ test("LinkedList.append(value) adds a new node containing value to the end of th
   expect(l.toString()).toBe("( apple ) -> ( banana ) -> null");
 });
 
+test("LinkedList.prepend(value) adds a new node containing value to the start of the list", () => {
+  const l = new LinkedList();
+  l.append("banana");
+  l.prepend("apple")
+  expect(l.toString()).toBe("( apple ) -> ( banana ) -> null")
+})
+
 test("LinkedList.size() returns total number of nodes in the list", () => {
   const l = new LinkedList();
   l.append("apple");
