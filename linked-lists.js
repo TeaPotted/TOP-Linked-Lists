@@ -173,6 +173,37 @@ class LinkedList {
       }
     }
   }
+
+  // function removeAt(index), removes the node at the given index
+  removeAt(index) {
+    switch (true) {
+      // if index is below zero or index is bigger or equal to the size of the list, throw a RangeError
+      case index < 0:
+      case index >= this.size():
+        throw RangeError("Index is out of bounds!");
+        break;
+
+      // if index === 0, just remove the first node in list
+      case index === 0: {
+        this.#head = this.#head.nextNode;
+        break;
+      }
+
+      default: {
+        let current = this.#head; // this will keep the node that is BEFORE the node at index
+        let i = 0;
+        // use a loop that moves on to the next node in list and increments i, until i === index - 1 (to get the number before index)
+        while (i !== index - 1) {
+          current = current.nextNode;
+          i++;
+        }
+
+        // get the node at index. then assign current.nextNode to the node at the given index's .nextNode value
+        let nodeAtIndex = current.nextNode;
+        current.nextNode = nodeAtIndex.nextNode;
+      }
+    }
+  }
 }
 
 // Node class, containing a value property and a nextNode property, set both as null by default
